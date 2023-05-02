@@ -1,0 +1,39 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Reservation{% endblock %}
+
+{% block body %}
+
+                <a href="{{ path('app_event_new') }}">Create new</a>
+
+           <!--table begin-->
+           <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Basic Datatable</h5>
+                <div class="table-responsive">
+                    <table id="zero_config" class="table table-striped table-bordered">
+        <tbody>
+            <tr>
+                <th>Idres</th>
+                <th>nom event </th>
+                <th>photo</th>
+                <th>User </th>
+                
+            </tr>
+            <tr>
+            <td>{{reservation.idres}}</td>
+           <td>{{reservation.idevent.nomEvent}}</td>
+           <td>{{reservation.idevent.photoe}}</td>
+           <td>{{reservation.idUser.nomUser}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_reservation_back') }}">back to list</a>
+
+
+    {{ include('reservation/_delete_form.html.twig') }}
+    
+
+    
+{% endblock %}
